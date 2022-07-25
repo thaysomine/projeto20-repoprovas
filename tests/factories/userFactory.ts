@@ -33,6 +33,13 @@ export function conflictEmailUser() {
 }
 
 // login user
+export function loginUser() {
+    return {
+        email: "teste@teste.com",
+        password: "senhasenha",
+    };
+}
+
 export function wrongPasswordUser() {
     return {
         email: "teste@teste.com",
