@@ -10,3 +10,8 @@ export async function insertTest(testData: testRepository.TestInsertData) {
         teacherDisciplineId
     });
 }
+
+export async function getByDiscipline() {
+    const test = await testRepository.getByDiscipline();
+    return test;
+}
