@@ -12,6 +12,9 @@ export async function insertTest(testData: testRepository.TestInsertData) {
 }
 
 export async function getByDiscipline() {
-    const test = await testRepository.getByDiscipline();
-    return test;
+    return await testRepository.getByDiscipline();
+}
+
+export async function getByTeacher() {
+    return await testRepository.getByTeacher();
 }

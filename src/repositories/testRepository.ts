@@ -18,7 +18,7 @@ export async function insert(testData: TestInsertData) {
 }
 
 export async function getByDiscipline() {
-    const test = await client.term.findMany({
+    return await client.term.findMany({
         select: {
             number: true,
             disciplines: {
@@ -40,5 +40,34 @@ export async function getByDiscipline() {
             },
         },
     });
-    return test;
+}
+
+// get tests by teacher
+export async function getByTeacher() {
+    return await client.teacher.findMany({
+        select: {
+            name: true,
+            teacherDiscipline: {
+                select: {
+                    discipline: {
+                        select: {
+                            name: true,
+                            term: {
+                                select: {
+                                    number: true
+                                }
+                            }
+                        },
+                    },
+                    test: {
+                        select: {
+                            name: true,
+                            pdfUrl: true,
+                            categories: { select: { name: true } },
+                        }
+                    }
+                }
+            }
+        }
+    });
 }

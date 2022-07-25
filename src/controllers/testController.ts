@@ -13,3 +13,8 @@ export async function getByDiscipline(req: Request, res: Response) {
     const test = await testService.getByDiscipline();
     res.json(test);
 }
+
+export async function getByTeacher(req: Request, res: Response) {
+    const test = await testService.getByTeacher();
+    res.json(test);
+}
