@@ -1,11 +1,11 @@
 import { Router } from "express";
 
 import { signup, login } from "../controllers/userController.js";
-//import { validateUser } from "../middlewares/joiValidation.js";
+import { validateSignup, validateLogin } from "../middlewares/joiValidation.js";
 
 const userRouter = Router();
 
-userRouter.post("/signup", signup);
-userRouter.post("/login", login);
+userRouter.post("/signup", validateSignup, signup);
+userRouter.post("/login", validateLogin, login);
 
 export default userRouter;
