@@ -4,7 +4,7 @@ export function createTest() {
     return {
         name: faker.name.firstName(),
         pdfUrl: faker.internet.url(),
-        categoryId: 8,
+        categoryId: 1,
         teacherDisciplineId: 5,
     };
 }
